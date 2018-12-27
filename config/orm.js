@@ -26,14 +26,14 @@ function objToSql(ob) {
 };
 
 var orm = {
-    SelectAll: function (burgers, Burger_name, cb) {
-        var query = "SELECT * FROM ";
-        connection.query(query, [burgers, Burger_name], function (err, results) {
+    selectAll: function (table, cb) {
+         var query = "SELECT * FROM " + table + ";";
+        connection.query(query, function (err, results) {
             if (err) throw err;
             cb(results);
         });
     },
-    InsertOne: function (burgers, Burger_name, cb) {
+    insertOne: function (burgers, Burger_name, cb) {
         var insert = "INSERT INTO " + burgers;
         insert += " (";
         insert += cols.toString();
@@ -51,7 +51,7 @@ var orm = {
           cb(results);
         });
       },
-      UpdateOne: function(burgers, objColValues, cb){
+      updateOne: function(burgers, objColValues, cb){
         var update = "UPDATE " + burgers;
 
         update += " SET ";

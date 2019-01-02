@@ -2,11 +2,17 @@
 
 <ul>
     {{#each burgers}}
+    <li>
+    {{this.Burger_name}}<button>devoured </button>
+    </li>
     {{/each}}
 </ul>
 
 <h2>Name a Burger</h2>
+<form>
+
+</form>
 <div>
     <input type="text" id="burger" name="name">
-    <button type="submit">Add Burger</button>
+    <button type="submit" class="burger">Add Burger</button>
 </div>

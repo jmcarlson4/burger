@@ -13,7 +13,7 @@ $(function () {
             data: newBurgerAddition
         }).then(
             function () {
-
+console.log(newBurger);
                 location.reload();
             }
         );

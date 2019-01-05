@@ -33,7 +33,7 @@ var orm = {
             cb(results);
         });
     },
-    insertOne: function (burgers, Burger_name, cb) {
+    create: function (burgers, Burger_name, cb) {
         var insert = "INSERT INTO " + burgers;
         insert += " (";
         insert += cols.toString();
@@ -51,7 +51,7 @@ var orm = {
           cb(results);
         });
       },
-      updateOne: function(burgers, objColValues, cb){
+      update: function(burgers, objColValues, cb){
         var update = "UPDATE " + burgers;
 
         update += " SET ";

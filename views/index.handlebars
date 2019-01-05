@@ -8,7 +8,7 @@
 {{!-- {{> burgers/burger-block Devoured=false}} --}}
     {{/unless}}
     <li>
-        {{this.Burger_name}} <button>devoured </button>
+        {{this.Burger_name}} <button class='devourme' data-id={{this.ID}}>devoured </button>
     </li>
     {{/each}}
 </ul>

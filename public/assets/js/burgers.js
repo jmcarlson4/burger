@@ -1,5 +1,6 @@
 $(function () {
     $(".burger").on("click", function (event) {
+        //console.log("Something got clicked");
         var id = $(this).data("id");
         var newBurger = $(this).data("newBurger");
 
@@ -13,7 +14,7 @@ $(function () {
             data: newBurgerAddition
         }).then(
             function () {
-console.log(newBurger);
+                console.log(newBurger);
                 location.reload();
             }
         );
@@ -39,4 +40,17 @@ console.log(newBurger);
             }
         );
     });
+
+    $(".devourme").click(function (event) {
+        event.preventDefault();
+        var id = event.currentTarget.dataset.id;
+
+        $.ajax("/burger", {
+            type: "PUT",
+            data: id
+        }).then(function () {
+            location.reload();
+        });
+
+    })
 });

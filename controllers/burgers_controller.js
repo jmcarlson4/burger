@@ -19,7 +19,7 @@ router.get("/api", function (request, response) {
     });
 });
 router.post("/burgers", function (request, response) {
-    burgers.insertOne([
+    burgers.create([
         "Burger_name", "Devoured"
     ], [
             request.body.Burger_name, request.body.Devoured],
